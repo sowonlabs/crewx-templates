@@ -1,0 +1,14 @@
+# Logs
+*.log
+wbs-progress.log
+wbs-errors.log
+
+# CrewX
+.crewx/
+
+# Node modules (if any)
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

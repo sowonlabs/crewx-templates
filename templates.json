@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "templates": [
+    {
+      "name": "wbs-automation",
+      "displayName": "WBS Automation",
+      "description": "WBS (Work Breakdown Structure) based project automation template",
+      "version": "1.0.0",
+      "path": "wbs-automation",
+      "author": "SowonLabs",
+      "tags": ["automation", "wbs", "project-management", "coordinator"],
+      "crewxVersion": ">=0.3.0",
+      "features": [
+        "Coordinator agent for automatic task execution",
+        "Phase-based parallel execution",
+        "Git-based time tracking",
+        "1-hour interval automation loop"
+      ]
+    }
+  ]
+}
