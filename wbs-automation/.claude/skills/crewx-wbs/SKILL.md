@@ -559,8 +559,8 @@ wbs.md (Main list - Keep concise!)
 **Work Time Tracking** (Auto-recorded by Coordinator):
 | Phase | Assignee | Start | Complete | Actual | Estimated | Status |
 |-------|----------|-------|----------|--------|-----------|--------|
-| Phase 1 | crewx_claude_dev | 2025-01-18 11:30 | 2025-01-18 15:00 | 3.5h | 4-5h | ✅ |
-| Phase 2 | crewx_codex_dev | 2025-01-18 15:30 | - | - | 3-4h | 🟡 |
+| Phase 1 | @claude | 2025-01-18 11:30 | 2025-01-18 15:00 | 3.5h | 4-5h | ✅ |
+| Phase 2 | @codex | 2025-01-18 15:30 | - | - | 3-4h | 🟡 |
 | Phase 3 | - | - | - | - | 3-4h | ⬜️ |
 
 ---

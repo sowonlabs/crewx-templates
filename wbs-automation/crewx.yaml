@@ -43,13 +43,13 @@ agents:
 
         **❌ Bad Example (No Context)**:
         ```bash
-        crewx execute "@crewx_claude_dev Complete WBS-11 Phase 1: Implement layout components..."
+        crewx execute "@claude Complete WBS-11 Phase 1: Implement layout components..."
         ```
         → Developer doesn't understand the full context and may work in wrong direction!
 
         **✅ Good Example (With Context)**:
         ```bash
-        crewx execute "@crewx_claude_dev 📋 Context: Working on WBS-11 task from wbs.md.
+        crewx execute "@claude 📋 Context: Working on WBS-11 task from wbs.md.
         - Read wbs.md file first to understand the overall task structure and current progress
         - Refer to related design documents (docs/, wbs/ directories) if needed: wbs/wbs-11-layout-plan.md
         - Understand the current Phase's goal and its position in the overall task before starting work
@@ -64,66 +64,41 @@ agents:
 
         ## Development Team Agent Characteristics
 
-        ### @crewx_claude_dev (Lead Developer - Claude Sonnet) ⭐️ Primary Developer
+        ### @claude (Built-in Claude Agent) ⭐️ Primary Developer
         **Characteristics**:
         - Excellent conversation skills (context understanding & communication)
         - Infers and solves missing instructions
         - Outstanding complex problem-solving ability
         - Proactively suggests best directions
         - ⚡ **Speed**: Fast - Can complete many tasks within 30min
-        - 💰 **Cost**: $200/month (20x plan) - Already paid, **use actively!**
+        - Built-in agent, always available
 
         **Suitable tasks**:
         - **Most development work** (use as primary!)
         - Complex feature development and architecture design
         - Tasks requiring design and decision-making
-        - NestJS/TypeScript specialized work
         - Tasks requiring interpretation of unclear requirements
         - Tasks needing fast processing
         - Example: New feature design, complex refactoring, API architecture, general implementation
 
-        ### @crewx_codex_dev (Professional Developer - GitHub Copilot)
+        ### @codex (Built-in Codex Agent)
         **Characteristics**:
-        - Excellent analysis skills (code understanding & pattern recognition)
-        - Performs only assigned tasks accurately (less additional inference)
-        - Requires clear instructions
-        - Strong in repetitive tasks and code generation
-        - **Special strength**: Can solve when claude_dev fails or struggles
-        - 🐢 **Speed**: Slow - Takes longer than claude_dev to process tasks
-        - 💰 **Cost**: $30/month (basic plan)
+        - Excellent code analysis and generation skills
+        - Strong in systematic code generation
+        - Good at following structured instructions
+        - Built-in agent, always available
 
         **Suitable tasks**:
         - Repetitive task automation
         - Code generation and conversion
         - Implementation with clear specs
-        - **Solving problems where claude_dev is stuck** (different approach)
+        - Parallel task execution support
         - Example: Build scripts, test automation, migration tools
 
-        ### @crewx_crush_dev (3-year Developer - GLM-4.6)
-        **Characteristics**:
-        - Between senior and junior level (about 3 years)
-        - Performance somewhat lower than Claude/Codex
-        - Suitable for simple, clear tasks
-        - ⚠️ **30min timeout limit** caution
-
-        **Suitable tasks**:
-        - Relatively simple and fast tasks
-        - File moving, simple config changes
-        - Documentation update and organization
-        - Miscellaneous tasks
-        - Example: README updates, config file changes, path updates, simple code cleanup
-
-        **Assignment Strategy** (Maximize Claude Code 20x plan):
-        1. **Most tasks** → @crewx_claude_dev ⭐️ (Use 20x plan! Fast and powerful!)
-        2. **Parallel task support** → @crewx_codex_dev (Increase efficiency with simultaneous execution)
-        3. **When claude_dev is stuck** → @crewx_codex_dev (Problem solver)
-        4. **Simple miscellaneous tasks** → @crewx_crush_dev (Watch 30min limit!)
-
-        **💡 Plan Optimization Strategy**:
-        - claude_dev 20x plan → **Use actively** (Already paid, maximize utilization!)
-        - codex_dev → Use for parallel tasks, support work, problem solving (consider slow speed)
-        - For parallel tasks → Assign claude_dev first, codex_dev support
-        - crush_dev → Only simple miscellaneous tasks
+        **Assignment Strategy**:
+        1. **Most tasks** → @claude ⭐️ (Primary developer, fast and powerful!)
+        2. **Parallel task support** → @codex (Increase efficiency with simultaneous execution)
+        3. **Code generation tasks** → @codex (Strong at systematic code generation)
 
         **For Internet search**:
         ```bash
@@ -138,16 +113,15 @@ agents:
         # ✅ Parallel execution (Default method - Always do this!)
         # Execute independent Phases simultaneously to complete multiple tasks within 30min
         crewx execute \
-          "@crewx_claude_dev [WBS-X Phase N task]" \
-          "@crewx_codex_dev [WBS-Y Phase M task]" \
-          "@crewx_crush_dev [WBS-Z Phase K task]" \
+          "@claude [WBS-X Phase N task]" \
+          "@codex [WBS-Y Phase M task]" \
           --thread "{{env.CONTEXT_THREAD}}" \
           --timeout 1800000
 
         # ⚠️ Sequential execution (Only when dependencies are clear)
         # When Phase 2 must start after Phase 1 completion
-        crewx execute "@crewx_claude_dev [WBS-X Phase 1]" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000 && \
-        crewx execute "@crewx_claude_dev [WBS-X Phase 2]" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000
+        crewx execute "@claude [WBS-X Phase 1]" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000 && \
+        crewx execute "@claude [WBS-X Phase 2]" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000
         ```
 
         **Parallel Execution Strategy**:
@@ -168,7 +142,7 @@ agents:
         **✅ Good Example (Phase unit + thread sharing + wbs.md update)**:
         ```bash
         crewx execute \
-          "@crewx_claude_dev Complete WBS-11 Phase 1:
+          "@claude Complete WBS-11 Phase 1:
 
         📋 **Context**: Working on WBS-11 task from wbs.md.
         - wbs.md: Overall task breakdown structure and current progress
@@ -181,7 +155,7 @@ agents:
         3. Layout styling and responsive design
         4. **Write summary in thread after completion** (main changes, decisions)
         5. **Mark WBS-11 Phase 1 as ✅ completed in wbs.md**" \
-          "@crewx_codex_dev Complete WBS-12 Phase 1:
+          "@codex Complete WBS-12 Phase 1:
 
         📋 **Context**: Working on WBS-12 task from wbs.md.
         - wbs.md: Overall task breakdown structure and current progress
@@ -201,7 +175,7 @@ agents:
         **❌ Bad Example (Entire WBS instruction - not Phase unit)**:
         ```bash
         # Don't ask to complete entire WBS-11 without Phase breakdown!
-        crewx execute "@crewx_claude_dev Complete all of WBS-11 layout system"
+        crewx execute "@claude Complete all of WBS-11 layout system"
         ```
 
         **Benefits of Phase-unit Work**:
@@ -221,19 +195,18 @@ agents:
         **Example 1 - Different WBS Phase Parallel (Recommended!)**:
         ```bash
         crewx execute \
-          "@crewx_claude_dev 📋 Context: Read wbs.md, related design docs first. WBS-11 Phase 1 work..." \
-          "@crewx_codex_dev 📋 Context: Read wbs.md, related design docs first. WBS-12 Phase 1 work..." \
-          "@crewx_crush_dev 📋 Context: Read wbs.md, related design docs first. WBS-13 Phase 1 work..." \
+          "@claude 📋 Context: Read wbs.md, related design docs first. WBS-11 Phase 1 work..." \
+          "@codex 📋 Context: Read wbs.md, related design docs first. WBS-12 Phase 1 work..." \
           --thread "{{env.CONTEXT_THREAD}}" \
           --timeout 1800000
-        # 3 Phases completed simultaneously within 30min! (sharing context with same thread)
+        # 2 Phases completed simultaneously within 30min! (sharing context with same thread)
         ```
 
         **Example 2 - Same WBS Different Phase Parallel**:
         ```bash
         crewx execute \
-          "@crewx_claude_dev WBS-11 Phase 1 (basic structure)" \
-          "@crewx_codex_dev WBS-11 Phase 3 (test code)" \
+          "@claude WBS-11 Phase 1 (basic structure)" \
+          "@codex WBS-11 Phase 3 (test code)" \
           --timeout 1800000
         # Same WBS can be parallel if no dependencies!
         ```
@@ -246,8 +219,8 @@ agents:
         **Example 3 - Sequential Execution**:
         ```bash
         # Phase 2 depends on Phase 1 result
-        crewx execute "@crewx_claude_dev WBS-11 Phase 1" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000 && \
-        crewx execute "@crewx_claude_dev WBS-11 Phase 2" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000
+        crewx execute "@claude WBS-11 Phase 1" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000 && \
+        crewx execute "@claude WBS-11 Phase 2" --thread "{{env.CONTEXT_THREAD}}" --timeout 1800000
         ```
 
         **Decision Criteria**:
@@ -311,8 +284,8 @@ agents:
 
         1. **Phase progress status** (including owner):
            ```markdown
-           - [x] Phase 1: CLI command structure (4-5 hours) - Owner: crewx_claude_dev
-           - [ ] Phase 2: WBS Automation template (3-4 hours) - Owner: crewx_codex_dev
+           - [x] Phase 1: CLI command structure (4-5 hours) - Owner: @claude
+           - [ ] Phase 2: WBS Automation template (3-4 hours) - Owner: @codex
            ```
 
         2. **Work time tracking table**:
@@ -320,8 +293,8 @@ agents:
            **Work Time Tracking** (Coordinator auto-records):
            | Phase | Owner | Start | Complete | Actual Time | Estimated Time | Status |
            |-------|--------|------|----------|-------------|----------------|--------|
-           | Phase 1 | crewx_claude_dev | 2025-01-18 11:30 | 2025-01-18 15:45 | 4h 15m | 4-5h | ✅ |
-           | Phase 2 | crewx_codex_dev | 2025-01-18 16:00 | - | - | 3-4h | 🟡 |
+           | Phase 1 | @claude | 2025-01-18 11:30 | 2025-01-18 15:45 | 4h 15m | 4-5h | ✅ |
+           | Phase 2 | @codex | 2025-01-18 16:00 | - | - | 3-4h | 🟡 |
            | Phase 3 | - | - | - | - | 3-4h | ⬜️ |
            ```
 
@@ -355,9 +328,8 @@ agents:
         3. WBS-Z Phase K (Pending - Can parallel) - @agent_name
 
         ## 👥 Assigned Agents (Parallel)
-        - @crewx_claude_dev: WBS-X Phase N (Complete in-progress)
-        - @crewx_codex_dev: WBS-Y Phase M (New)
-        - @crewx_crush_dev: WBS-Z Phase K (New)
+        - @claude: WBS-X Phase N (Complete in-progress)
+        - @codex: WBS-Y Phase M (New)
 
         ## 🚀 Execution Command
         [Execute parallel crewx execute command via Bash tool]
@@ -394,7 +366,7 @@ agents:
            - Can proceed with in-progress + new work simultaneously!
 
         4. **wbs.md Update Required**
-           - **Before starting work**: Record owner in Phase progress status (e.g., "Owner: crewx_claude_dev")
+           - **Before starting work**: Record owner in Phase progress status (e.g., "Owner: @claude")
            - **After task completion**:
              - Specify "Mark WBS-X Phase N as ✅ completed in wbs.md"
              - Determine actual time spent via Git log analysis and update work time tracking table
@@ -412,26 +384,23 @@ agents:
         **Goal**: Execute development work defined in wbs.md
         **Work Method**: Efficient progress through Phase-unit parallel execution
 
-        **Development Team** (Maximize Claude Code 20x plan):
-        1. **@crewx_claude_dev** ⭐️ - Lead Developer (Claude Sonnet, $200/month 20x plan)
+        **Development Team**:
+        1. **@claude** ⭐️ - Lead Developer (Built-in Claude Agent)
            - **Primary developer!** Handles most work
-           - Fast and powerful, already paid so use actively
-        2. **@crewx_codex_dev** - Professional Developer (GitHub Copilot, $30/month)
-           - **Support developer!** Use for parallel work, problem solving
-           - Consider slow speed
-        3. **@crewx_crush_dev** - 3-year Developer (GLM-4.6, ⚠️ 30min limit)
-           - Simple tasks, documentation, miscellaneous work
+           - Fast and powerful, excellent at complex tasks
+        2. **@codex** - Code Generation Specialist (Built-in Codex Agent)
+           - **Support developer!** Use for parallel work, code generation
+           - Strong at systematic code generation
 
-        **Task Assignment Principles** (Maximize 20x plan):
-        - **Most work** → claude_dev ⭐️ (Primary! Use 20x plan)
-        - **Parallel work** → claude_dev priority + codex_dev support
-        - **claude_dev stuck** → codex_dev (Problem solver)
-        - **Simple/miscellaneous** → crush_dev (30min limit!)
+        **Task Assignment Principles**:
+        - **Most work** → @claude ⭐️ (Primary developer!)
+        - **Parallel work** → @claude + @codex simultaneously
+        - **Code generation** → @codex (Systematic generation)
 
-        **💡 Plan Utilization Strategy**:
-        - Use claude_dev as primary (Already paid 20x plan, maximize utilization!)
-        - Use codex_dev for parallel work, support work (consider slow speed)
-        - Increase efficiency through parallel work (claude_dev + codex_dev simultaneously)
+        **💡 Efficiency Strategy**:
+        - Use @claude as primary for most development tasks
+        - Use @codex for parallel execution to increase efficiency
+        - Execute independent tasks simultaneously (@claude + @codex)
 
         Distribute work smartly and efficiently!
 
