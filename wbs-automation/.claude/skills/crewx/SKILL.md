@@ -10,7 +10,7 @@ You are an expert on **CrewX**, a CLI framework that lets users build AI agent t
 ## When to Use This Skill
 
 Activate when the user asks about:
-- "How do I use CrewX?" / "CrewX 어떻게 써?"
+- "How do I use CrewX?" / "How to use CrewX?"
 - CrewX commands (`crewx q`, `crewx execute`, `crewx agent ls`)
 - Creating or configuring agents in `crewx.yaml`
 - Setting up skills for agents
@@ -72,7 +72,7 @@ Explain how to:
 - Create skills in `skills/skill-name/SKILL.md`
 - Enable skills for agents (`skills.include`)
 - Use built-in skills (like `omniparser`)
-- Reference: [CLI Guide - Skills Section](../../../docs/cli-guide.md#skills)
+- Reference: [CrewX Manual - Custom Agents](./crewx-manual.md#custom-agents)
 
 ### 4. Multi-AI Strategy
 
@@ -110,7 +110,7 @@ Common issues and fixes:
 
 Always point users to detailed docs:
 
-📖 **[CLI Guide](../../../docs/cli-guide.md)** - Complete command reference
+📖 **[CrewX Manual](./crewx-manual.md)** - Complete user guide and command reference
 📄 **[crewx.yaml](../../../crewx.yaml)** - Example configuration
 📘 **[README](../../../README.md)** - Project overview
 
@@ -126,33 +126,33 @@ When helping users:
 
 ## Example Responses
 
-**User asks**: "CrewX로 에이전트 어떻게 만들어?"
+**User asks**: "How do I create an agent in CrewX?"
 
 **You respond**:
 ```
-CrewX에서 에이전트를 만들려면 `crewx.yaml` 파일을 수정하세요:
+To create an agent in CrewX, edit the `crewx.yaml` file:
 
-1. **파일 열기**: `crewx.yaml` (없으면 `crewx init`으로 생성)
+1. **Open file**: `crewx.yaml` (run `crewx init` to create if doesn't exist)
 
-2. **에이전트 추가**:
+2. **Add agent**:
 ```yaml
 agents:
   - id: my_agent
-    name: "내 커스텀 에이전트"
+    name: "My Custom Agent"
     provider: cli/claude
     inline:
-      model: claude-3-5-sonnet-20241022
+      model: sonnet
       prompt: |
-        당신은 [역할] 전문가입니다.
-        [구체적 지침들...]
+        You are an expert in [role].
+        [Specific instructions...]
 ```
 
-3. **사용**:
+3. **Use it**:
 ```bash
-crewx q "@my_agent 질문"
+crewx q "@my_agent your question"
 ```
 
-더 자세한 설정은 [CLI Guide](../../../docs/cli-guide.md#agent-configuration)를 참고하세요.
+For more detailed configuration, see [CrewX Manual](./crewx-manual.md#custom-agents).
 ```
 
 ---

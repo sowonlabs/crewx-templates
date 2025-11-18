@@ -23,6 +23,7 @@ crewx template init wbs-automation
 - `crewx.yaml` - Coordinator agent configuration
 - `wbs.md` - WBS document template
 - `wbs-loop.sh` - Automation loop script
+- `docs/crewx-manual.md` - CrewX user manual
 - `.claude/skills/crewx-wbs/` - WBS management skill
 - `.claude/skills/crewx/` - CrewX usage skill
 
@@ -97,8 +98,8 @@ Essential for understanding `crewx q`, `crewx execute` commands and agent config
 
 ## 📖 Reference Documentation
 
-- [CrewX Documentation](https://github.com/sowonlabs/crewx)
-- [WBS Best Practices](../../docs/wbs-guide.md)
+- [CrewX Manual](docs/crewx-manual.md) - Complete user guide (included in template)
+- [CrewX GitHub](https://github.com/sowonlabs/crewx) - Official repository
 
 ## 📄 License
 
