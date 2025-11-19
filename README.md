@@ -19,13 +19,13 @@ crewx template init wbs-automation
 
 ---
 
-### 2. docusaurus-i18n-template
+### 2. docusaurus-i18n
 
 Docusaurus site with AI-powered Korean ↔ English auto-translation.
 
 ```bash
 mkdir my-docs && cd my-docs
-crewx template init docusaurus-i18n-template
+crewx template init docusaurus-i18n
 npm install && npm start
 ```
 
@@ -44,7 +44,7 @@ npm run translate:ko-to-en
 - `@blog_manager` - Content creation & management
 - `@blog_translator` - Korean ↔ English translation
 
-[Details →](./docusaurus-i18n-template/README.md)
+[Details →](./docusaurus-i18n/README.md)
 
 ---
 

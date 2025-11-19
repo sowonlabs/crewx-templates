@@ -18,11 +18,11 @@
       ]
     },
     {
-      "name": "docusaurus-i18n-template",
-      "displayName": "Docusaurus i18n Template",
+      "name": "docusaurus-i18n",
+      "displayName": "Docusaurus i18n",
       "description": "Docusaurus site with AI-powered auto-translation workflow (Korean ↔ English)",
       "version": "1.0.0",
-      "path": "docusaurus-i18n-template",
+      "path": "docusaurus-i18n",
       "author": "SowonLabs",
       "tags": ["docusaurus", "i18n", "translation", "documentation", "blog"],
       "crewxVersion": ">=0.3.0",

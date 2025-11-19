@@ -4,8 +4,8 @@
 # that automates Korean ↔ English blog translations.
 
 metadata:
-  name: "docusaurus-i18n-template"
-  displayName: "Docusaurus i18n Template"
+  name: "docusaurus-i18n"
+  displayName: "Docusaurus i18n"
   description: "Docusaurus site with AI-powered auto-translation workflow (Korean ↔ English)"
   version: "1.0.0"
   author: "SowonLabs"
