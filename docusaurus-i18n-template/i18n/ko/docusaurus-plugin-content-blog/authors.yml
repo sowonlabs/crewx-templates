@@ -1,0 +1,11 @@
+team:
+  name: 팀
+  title: 개발팀
+  url: https://github.com/{{YOUR_ORG}}
+  image_url: https://github.com/{{YOUR_ORG}}.png
+
+admin:
+  name: 관리자
+  title: 프로젝트 관리자
+  url: https://github.com/{{YOUR_USERNAME}}
+  image_url: https://github.com/{{YOUR_USERNAME}}.png

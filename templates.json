@@ -16,6 +16,23 @@
         "Git-based time tracking",
         "1-hour interval automation loop"
       ]
+    },
+    {
+      "name": "docusaurus-i18n-template",
+      "displayName": "Docusaurus i18n Template",
+      "description": "Docusaurus site with AI-powered auto-translation workflow (Korean ↔ English)",
+      "version": "1.0.0",
+      "path": "docusaurus-i18n-template",
+      "author": "SowonLabs",
+      "tags": ["docusaurus", "i18n", "translation", "documentation", "blog"],
+      "crewxVersion": ">=0.3.0",
+      "features": [
+        "Fixed Docusaurus 3.9.2",
+        "Pre-configured Korean/English i18n",
+        "Auto-translation script",
+        "CrewX translator agent",
+        "Write once, publish in both languages"
+      ]
     }
   ]
 }

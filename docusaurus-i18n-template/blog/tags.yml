@@ -1,0 +1,19 @@
+tutorial:
+  label: Tutorial
+  permalink: /tutorial
+  description: Step-by-step guides and tutorials
+
+release:
+  label: Release
+  permalink: /release
+  description: Product releases and updates
+
+feature:
+  label: Feature
+  permalink: /feature
+  description: New features and enhancements
+
+announcement:
+  label: Announcement
+  permalink: /announcement
+  description: Important announcements

@@ -4,22 +4,47 @@ Official CrewX project template repository.
 
 ## 📦 Available Templates
 
-### wbs-automation
-WBS-based project automation template
+### 1. wbs-automation
 
-**Usage**:
+WBS-based project automation with coordinator agent.
+
 ```bash
-mkdir my-project && cd my-project
 crewx template init wbs-automation
 ```
 
-**Features**:
-- Coordinator agent for automatic task execution
-- Phase-based parallel execution
-- Git-based time tracking
-- 1-hour interval automation loop
+- Automatic task execution with phase-based parallel processing
+- Git-based time tracking and 1-hour automation loop
 
-[Detailed Guide →](./wbs-automation/README.md)
+[Details →](./wbs-automation/README.md)
+
+---
+
+### 2. docusaurus-i18n-template
+
+Docusaurus site with AI-powered Korean ↔ English auto-translation.
+
+```bash
+mkdir my-docs && cd my-docs
+crewx template init docusaurus-i18n-template
+npm install && npm start
+```
+
+**Quick Start**:
+```bash
+# Write Korean blog, auto-translate to English
+crewx x "@blog_manager Write a Korean blog about features"
+npm run translate:ko-to-en
+
+# Or use Slack bot
+./start-slack.sh
+```
+
+**3 Agents Included**:
+- `@template_installer` - Setup & configuration guide
+- `@blog_manager` - Content creation & management
+- `@blog_translator` - Korean ↔ English translation
+
+[Details →](./docusaurus-i18n-template/README.md)
 
 ---
 

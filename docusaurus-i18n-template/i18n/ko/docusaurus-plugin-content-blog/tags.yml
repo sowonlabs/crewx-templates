@@ -1,0 +1,19 @@
+tutorial:
+  label: 튜토리얼
+  permalink: /tutorial
+  description: 단계별 가이드 및 튜토리얼
+
+release:
+  label: 릴리스
+  permalink: /release
+  description: 제품 릴리스 및 업데이트
+
+feature:
+  label: 기능
+  permalink: /feature
+  description: 새로운 기능 및 개선사항
+
+announcement:
+  label: 공지사항
+  permalink: /announcement
+  description: 중요 공지사항
