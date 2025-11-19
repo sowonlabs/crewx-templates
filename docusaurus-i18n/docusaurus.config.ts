@@ -14,8 +14,8 @@ const config: Config = {
   url: 'https://{{YOUR_DOMAIN}}',
   baseUrl: '/',
 
-  organizationName: '{{YOUR_ORG}}',
-  projectName: '{{PROJECT_NAME}}',
+  organizationName: 'sowonlabs',
+  projectName: 'crewx',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -43,7 +43,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/{{YOUR_ORG}}/{{PROJECT_NAME}}/tree/main/',
+          editUrl: 'https://github.com/sowonlabs/crewx/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -51,7 +51,7 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl: 'https://github.com/{{YOUR_ORG}}/{{PROJECT_NAME}}/tree/main/',
+          editUrl: 'https://github.com/sowonlabs/crewx/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -69,10 +69,10 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: '{{PROJECT_TITLE}}',
+      title: 'My Documentation Site',
       logo: {
-        alt: '{{PROJECT_TITLE}} Logo',
-        src: 'img/logo.png',
+        alt: 'My Documentation Site Logo',
+        src: 'img/logo.svg',
       },
       items: [
         {
@@ -87,7 +87,7 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/{{YOUR_ORG}}/{{PROJECT_NAME}}',
+          href: 'https://github.com/sowonlabs/crewx',
           label: 'GitHub',
           position: 'right',
         },
@@ -110,7 +110,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/{{YOUR_ORG}}/{{PROJECT_NAME}}',
+              href: 'https://github.com/sowonlabs/crewx',
             },
           ],
         },
@@ -124,7 +124,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} {{YOUR_ORG}}. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} SowonLabs. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
