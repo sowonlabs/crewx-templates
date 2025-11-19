@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: '{{PROJECT_TITLE}}',
-  tagline: '{{PROJECT_TAGLINE}}',
+  title: 'My Documentation Site',
+  tagline: 'AI-powered multilingual documentation with CrewX',
   favicon: 'img/favicon.ico',
 
   future: {
