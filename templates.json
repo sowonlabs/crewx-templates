@@ -9,7 +9,7 @@
       "path": "wbs-automation",
       "author": "SowonLabs",
       "tags": ["automation", "wbs", "project-management", "coordinator"],
-      "crewxVersion": ">=0.3.0",
+      "crewxVersion": ">=0.7.0",
       "features": [
         "Coordinator agent for automatic task execution",
         "Phase-based parallel execution",
@@ -25,7 +25,7 @@
       "path": "docusaurus-i18n",
       "author": "SowonLabs",
       "tags": ["docusaurus", "i18n", "translation", "documentation", "blog"],
-      "crewxVersion": ">=0.3.0",
+      "crewxVersion": ">=0.7.0",
       "features": [
         "Fixed Docusaurus 3.9.2",
         "Pre-configured Korean/English i18n",
