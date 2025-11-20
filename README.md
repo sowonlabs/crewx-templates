@@ -48,6 +48,36 @@ npm run translate:ko-to-en
 
 ---
 
+### 3. crewx-skill
+
+Claude Code skill for CrewX CLI framework assistance.
+
+```bash
+# Initialize in your CrewX project
+crewx template init crewx-skill
+
+# Or manually copy to any project
+cd crewx-skill
+cp -r .claude /path/to/your/project/
+```
+
+**Features**:
+- Auto-activates when you ask CrewX questions
+- Complete command reference and examples
+- Configuration guidance for `crewx.yaml`
+- Multi-AI workflow recommendations
+- Troubleshooting assistance
+
+**Usage**:
+Just ask your Claude Code assistant:
+- "How do I create a custom agent?"
+- "What's the difference between query and execute?"
+- "Show me crewx.yaml syntax for adding skills"
+
+[Details →](./crewx-skill/README.md)
+
+---
+
 ## 🏢 Creating Company/Personal Template Repository
 
 ### 1. Fork & Clone

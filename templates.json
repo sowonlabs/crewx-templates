@@ -33,6 +33,23 @@
         "CrewX translator agent",
         "Write once, publish in both languages"
       ]
+    },
+    {
+      "name": "crewx-skill",
+      "displayName": "CrewX Skill",
+      "description": "Claude Code skill for CrewX CLI framework assistance",
+      "version": "1.0.0",
+      "path": "crewx-skill",
+      "author": "SowonLabs",
+      "tags": ["claude-code", "skill", "assistant", "documentation"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Auto-activating CrewX expert skill",
+        "Complete command reference",
+        "Configuration guidance",
+        "Multi-AI workflow recommendations",
+        "Troubleshooting assistance"
+      ]
     }
   ]
 }
