@@ -50,6 +50,142 @@
         "Multi-AI workflow recommendations",
         "Troubleshooting assistance"
       ]
+    },
+    {
+      "name": "gmail-skill",
+      "displayName": "Gmail Skill",
+      "type": "skill",
+      "description": "Gmail API integration for sending, reading, and searching emails",
+      "version": "1.0.0",
+      "path": "gmail-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "email", "gmail", "google", "automation"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Send emails with attachments",
+        "Read and search messages",
+        "OAuth2 authentication setup",
+        "Full Gmail API integration"
+      ]
+    },
+    {
+      "name": "google-calendar-skill",
+      "displayName": "Google Calendar Skill",
+      "type": "skill",
+      "description": "Google Calendar API integration for event management",
+      "version": "1.0.0",
+      "path": "google-calendar-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "calendar", "google", "scheduling", "automation"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Create, update, delete events",
+        "List calendars and events",
+        "OAuth2 authentication setup",
+        "Full Calendar API integration"
+      ]
+    },
+    {
+      "name": "google-drive-skill",
+      "displayName": "Google Drive Skill",
+      "type": "skill",
+      "description": "Google Drive API integration for file management",
+      "version": "1.0.0",
+      "path": "google-drive-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "storage", "google-drive", "files", "cloud"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Upload and download files",
+        "Search and list files",
+        "Read file contents",
+        "OAuth2 authentication setup"
+      ]
+    },
+    {
+      "name": "notion-skill",
+      "displayName": "Notion Skill",
+      "type": "skill",
+      "description": "Notion API integration for page and database management",
+      "version": "1.0.0",
+      "path": "notion-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "notion", "database", "documentation", "productivity"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Create and read pages",
+        "Query and update databases",
+        "Search across workspace",
+        "Integration secret authentication"
+      ]
+    },
+    {
+      "name": "image-resizer-skill",
+      "displayName": "Image Resizer Skill",
+      "type": "skill",
+      "description": "Image resizing tool optimized for AI API token limits",
+      "version": "1.0.0",
+      "path": "image-resizer-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "image", "resize", "optimization", "ai"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Resize images for AI API limits",
+        "Multiple output formats (PNG, JPEG, WebP)",
+        "Quality and dimension control",
+        "Base64 output support"
+      ]
+    },
+    {
+      "name": "ocr-extractor-skill",
+      "displayName": "OCR Extractor Skill",
+      "type": "skill",
+      "description": "Extract text from images using AI vision APIs",
+      "version": "1.0.0",
+      "path": "ocr-extractor-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "ocr", "image", "text-extraction", "ai"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Extract text from images",
+        "Support multiple image formats",
+        "AI-powered recognition",
+        "Structured output options"
+      ]
+    },
+    {
+      "name": "md-to-pdf-skill",
+      "displayName": "Markdown to PDF Skill",
+      "type": "skill",
+      "description": "Convert Markdown files to PDF documents",
+      "version": "1.0.0",
+      "path": "md-to-pdf-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "markdown", "pdf", "converter", "documentation"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Convert Markdown to PDF",
+        "Custom styling support",
+        "Inline CSS injection",
+        "Report generation"
+      ]
+    },
+    {
+      "name": "slack-upload-skill",
+      "displayName": "Slack Upload Skill",
+      "type": "skill",
+      "description": "Upload files to Slack channels and threads",
+      "version": "1.0.0",
+      "path": "slack-upload-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "slack", "upload", "files", "automation"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Upload files to channels",
+        "Thread-specific uploads",
+        "Auto-detect channel from environment",
+        "Message attachment support"
+      ]
     }
   ]
 }

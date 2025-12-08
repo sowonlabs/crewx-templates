@@ -1,8 +1,33 @@
-# Template test directory
-tests/
+# =================================
+# SECURITY - NEVER COMMIT THESE
+# =================================
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Google API credentials
+credentials.json
+token.json
+*-credentials.json
+*-token.json
+
+# API keys and secrets
+*.pem
+*.key
+*.secret
+secrets/
+.secrets/
+
+# =================================
+# Node.js
+# =================================
 
 # Node modules
 node_modules/
+package-lock.json
 
 # Build outputs
 dist/
@@ -13,6 +38,13 @@ build/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# =================================
+# Development
+# =================================
+
+# Template test directory
+tests/
 
 # OS files
 .DS_Store
@@ -27,3 +59,13 @@ Thumbs.db
 # Temporary files
 *.tmp
 .cache/
+
+# =================================
+# Skill-specific outputs
+# =================================
+
+# Downloaded files
+downloads/
+
+# Generated PDFs (from md-to-pdf)
+output/

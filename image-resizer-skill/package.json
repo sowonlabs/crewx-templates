@@ -1,0 +1,30 @@
+{
+  "name": "crewx-skill-image-resizer",
+  "version": "0.1.0",
+  "description": "Image resizing skill for AI API optimization - CrewX",
+  "private": true,
+  "main": "resizer.js",
+  "bin": {
+    "resize-image": "./resizer.js"
+  },
+  "scripts": {
+    "resize": "node resizer.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  },
+  "optionalDependencies": {
+    "glob": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "image",
+    "resize",
+    "ai",
+    "optimization",
+    "crewx",
+    "skill"
+  ]
+}

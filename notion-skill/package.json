@@ -1,0 +1,16 @@
+{
+  "name": "notion-skill",
+  "version": "0.1.0",
+  "description": "Notion workspace integration skill for CrewX",
+  "private": true,
+  "scripts": {
+    "list": "node get-notion-pages.js",
+    "search": "node search-pages.js",
+    "read": "node read-page.js",
+    "create": "node create-page.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^5.4.0",
+    "dotenv": "^17.2.3"
+  }
+}

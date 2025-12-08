@@ -1,0 +1,22 @@
+{
+  "name": "crewx-skill-google-drive",
+  "version": "0.1.0",
+  "description": "Google Drive integration skill for CrewX",
+  "private": true,
+  "scripts": {
+    "setup": "node setup-auth.js",
+    "list": "node list-files.js",
+    "search": "node search-files.js",
+    "info": "node get-file-info.js",
+    "download": "node download-file.js"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "@nestjs/common": "^11.0.5",
+    "@nestjs/core": "^11.0.5",
+    "@sowonai/nestjs-google-oauth-integration": "^0.1.5",
+    "dotenv": "^16.4.5",
+    "googleapis": "^148.0.0",
+    "reflect-metadata": "^0.1.13"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "crewx-skill-ocr-extractor",
+  "version": "0.1.0",
+  "description": "OCR extraction skill using Gemini AI - CrewX",
+  "private": true,
+  "main": "extractor.js",
+  "bin": {
+    "ocr-extract": "./extractor.js"
+  },
+  "scripts": {
+    "extract": "node extractor.js"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "gemini-cli": "*"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ocr",
+    "image",
+    "text-extraction",
+    "gemini",
+    "ai",
+    "crewx",
+    "skill"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "crewx-skill-google-calendar",
+  "version": "0.1.0",
+  "description": "Google Calendar integration skill for CrewX",
+  "private": true,
+  "scripts": {
+    "setup": "node setup-auth.js",
+    "calendars": "node list-calendars.js",
+    "events": "node list-events.js",
+    "create": "node create-event.js",
+    "update": "node update-event.js",
+    "delete": "node delete-event.js"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
+    "@nestjs/common": "^11.0.5",
+    "@nestjs/core": "^11.0.5",
+    "@sowonai/nestjs-google-oauth-integration": "^0.1.5",
+    "dotenv": "^16.4.5",
+    "googleapis": "^148.0.0",
+    "reflect-metadata": "^0.1.13"
+  }
+}

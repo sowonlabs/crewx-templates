@@ -1,0 +1,22 @@
+{
+  "name": "slack-upload",
+  "version": "1.0.0",
+  "description": "슬랙 채널 또는 스레드에 파일을 업로드하는 스킬",
+  "type": "module",
+  "main": "slack-upload.mjs",
+  "bin": {
+    "slack-upload": "./slack-upload.mjs"
+  },
+  "scripts": {
+    "upload": "node slack-upload.mjs"
+  },
+  "keywords": [
+    "slack",
+    "upload",
+    "file",
+    "crewx",
+    "skill"
+  ],
+  "author": "",
+  "license": "MIT"
+}

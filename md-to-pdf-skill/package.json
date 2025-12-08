@@ -1,0 +1,27 @@
+{
+  "name": "crewx-skill-md-to-pdf",
+  "version": "0.1.0",
+  "description": "Markdown to PDF converter skill - CrewX",
+  "private": true,
+  "main": "convert.js",
+  "bin": {
+    "md-to-pdf": "./convert.js"
+  },
+  "scripts": {
+    "convert": "node convert.js"
+  },
+  "dependencies": {
+    "md-to-pdf": "^5.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "markdown",
+    "pdf",
+    "converter",
+    "documentation",
+    "crewx",
+    "skill"
+  ]
+}
