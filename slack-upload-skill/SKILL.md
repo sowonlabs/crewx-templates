@@ -12,15 +12,20 @@ Uploads files to Slack channels or specific threads.
 This skill is installed as an **independent module**. It does not affect the parent project's dependencies.
 
 ```bash
-# Navigate to skill directory
-cd skills/slack-upload-skill
+# 1. Install the skill template
+crewx template init slack-upload-skill
 
-# Install dependencies (pure Node.js - no additional packages)
+# 2. Navigate to the skill directory
+cd slack-upload-skill
+
+# 3. Install dependencies (pure Node.js - no additional packages)
 npm install
 
-# Verify installation
+# 4. Verify installation
 node slack-upload.mjs --help
 ```
+
+> **Note**: The skill can be installed anywhere. All commands below assume you are in the skill directory.
 
 ---
 
@@ -31,12 +36,14 @@ node slack-upload.mjs --help
 
 ## Usage
 
+All commands should be run from within the skill directory:
+
 ```bash
 # Using environment variables (recommended) - auto-detect channel/thread
-node .claude/skills/slack-upload-skill/slack-upload.mjs <file_path> -m "message"
+node slack-upload.mjs <file_path> -m "message"
 
 # Specify channel/thread directly
-node .claude/skills/slack-upload-skill/slack-upload.mjs <channel_id> <file_path> -t <thread_ts> -m "message"
+node slack-upload.mjs <channel_id> <file_path> -t <thread_ts> -m "message"
 ```
 
 ### Options
@@ -52,10 +59,10 @@ node .claude/skills/slack-upload-skill/slack-upload.mjs <channel_id> <file_path>
 
 ```bash
 # Auto-detect channel/thread from env vars (recommended in crewx slack mode)
-node .claude/skills/slack-upload-skill/slack-upload.mjs ./reports/result.pdf -m "Here are the results"
+node slack-upload.mjs /path/to/result.pdf -m "Here are the results"
 
 # Specify channel/thread directly
-node .claude/skills/slack-upload-skill/slack-upload.mjs C09U0MUREEQ ./reports/result.pdf -t 1732123456.123456
+node slack-upload.mjs C09U0MUREEQ /path/to/result.pdf -t 1732123456.123456
 ```
 
 ## Environment Variables

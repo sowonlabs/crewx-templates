@@ -12,15 +12,20 @@ Converts Markdown files to PDF documents.
 This skill is installed as an **independent module**. It does not affect the parent project's dependencies.
 
 ```bash
-# Navigate to skill directory
-cd skills/md-to-pdf-skill
+# 1. Install the skill template
+crewx template init md-to-pdf-skill
 
-# Install dependencies (node_modules created only in this folder)
+# 2. Navigate to the skill directory
+cd md-to-pdf-skill
+
+# 3. Install dependencies (node_modules created only in this folder)
 npm install
 
-# Verify installation
+# 4. Verify installation
 node convert.js --help
 ```
+
+> **Note**: The skill can be installed anywhere. All commands below assume you are in the skill directory.
 
 ### Note
 
@@ -30,15 +35,17 @@ On first run, Chromium will be downloaded (uses Puppeteer). This may take some t
 
 ## Usage
 
+All commands should be run from within the skill directory:
+
 ```bash
 # Single file conversion
-node skills/md-to-pdf-skill/convert.js reports/tax_claude_result.md
+node convert.js /path/to/report.md
 
 # Specify output file
-node skills/md-to-pdf-skill/convert.js input.md output.pdf
+node convert.js /path/to/input.md /path/to/output.pdf
 
 # Convert all .md files in folder
-node skills/md-to-pdf-skill/convert.js reports/
+node convert.js /path/to/reports/
 ```
 
 ## Output

@@ -10,15 +10,20 @@ description: OCR and markdown conversion skill using Gemini. Supports parallel p
 This skill is installed as an **independent module**. It does not affect the parent project's dependencies.
 
 ```bash
-# Navigate to skill directory
-cd skills/ocr-extractor-skill
+# 1. Install the skill template
+crewx template init ocr-extractor-skill
 
-# Install dependencies (pure Node.js - no additional packages)
+# 2. Navigate to the skill directory
+cd ocr-extractor-skill
+
+# 3. Install dependencies (pure Node.js - no additional packages)
 npm install
 
-# Verify installation
+# 4. Verify installation
 node extractor.js --help
 ```
+
+> **Note**: The skill can be installed anywhere. All commands below assume you are in the skill directory.
 
 ### Prerequisites
 
@@ -57,15 +62,17 @@ Gemini excels at individual image OCR, but when **analyzing multiple images at o
 
 ### Basic Usage
 
+All commands should be run from within the skill directory:
+
 ```bash
 # Directory OCR (parallel 2, default)
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./images
+node extractor.js --dir /path/to/images
 
 # Parallel 3 processing (faster, watch API limits)
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./images --concurrency 3
+node extractor.js --dir /path/to/images --concurrency 3
 
 # Single image processing
-node .claude/skills/ocr-extractor-skill/extractor.js ./image.jpg
+node extractor.js ./image.jpg
 ```
 
 ### Options
@@ -94,11 +101,11 @@ working/20251126120000/
 ### Workflow (Recommended)
 
 ```bash
-# Step 1: Image resizing (image-resizer-skill)
-node .claude/skills/image-resizer-skill/resizer.js --dir ".crewx/slack-files/C09U0MUREEQ_123"
+# Step 1: Image resizing (from image-resizer-skill directory)
+node resizer.js --dir "/path/to/images"
 
-# Step 2: OCR extraction (automatically uses resized images)
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ".crewx/slack-files/C09U0MUREEQ_123" --concurrency 2
+# Step 2: OCR extraction (from ocr-extractor-skill directory)
+node extractor.js --dir "/path/to/images" --concurrency 2
 
 # Step 3: Analyze results
 # Check working/[timestamp]/INDEX.md then analyze individual markdown files
@@ -121,11 +128,11 @@ node .claude/skills/ocr-extractor-skill/extractor.js --dir ".crewx/slack-files/C
 
 ```bash
 # Already processed files automatically skipped
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./images
+node extractor.js --dir ./images
 # Output: ⏭️  Cached (skipped): image1.jpg
 
 # Force reprocess
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./images --no-cache
+node extractor.js --dir ./images --no-cache
 ```
 
 ## Special Purpose Prompts
@@ -133,7 +140,7 @@ node .claude/skills/ocr-extractor-skill/extractor.js --dir ./images --no-cache
 ### For Tax Documents
 
 ```bash
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./tax-docs \
+node extractor.js --dir ./tax-docs \
   --prompt "This is a tax-related document. Please extract the following accurately:
 - Amounts (in currency units)
 - Dates (YYYY-MM-DD format)
@@ -145,7 +152,7 @@ node .claude/skills/ocr-extractor-skill/extractor.js --dir ./tax-docs \
 ### For Contracts
 
 ```bash
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./contracts \
+node extractor.js --dir ./contracts \
   --prompt "This is a contract document. Please extract:
 - Contracting parties
 - Contract date, start date, end date
@@ -156,7 +163,7 @@ node .claude/skills/ocr-extractor-skill/extractor.js --dir ./contracts \
 ### For Receipts
 
 ```bash
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./receipts \
+node extractor.js --dir ./receipts \
   --prompt "This is a receipt. Please extract:
 - Business name
 - Date/Time
@@ -198,5 +205,5 @@ gemini --version
 
 ```bash
 # Clear cache and retry
-node .claude/skills/ocr-extractor-skill/extractor.js --dir ./images --clear-cache
+node extractor.js --dir ./images --clear-cache
 ```

@@ -10,15 +10,20 @@ description: Image resizing tool optimized for AI API file size limits. Resize i
 This skill is installed as an **independent module**. It does not affect the parent project's dependencies.
 
 ```bash
-# Navigate to skill directory
-cd skills/image-resizer-skill
+# 1. Install the skill template
+crewx template init image-resizer-skill
 
-# Install dependencies (node_modules created only in this folder)
+# 2. Navigate to the skill directory
+cd image-resizer-skill
+
+# 3. Install dependencies (node_modules created only in this folder)
 npm install
 
-# Verify installation
+# 4. Verify installation
 node resizer.js --help
 ```
+
+> **Note**: The skill can be installed anywhere. All commands below assume you are in the skill directory.
 
 ### Alternative Installation (System ImageMagick)
 
@@ -52,13 +57,13 @@ This skill resizes large image files to appropriate sizes for AI API processing.
 **Use this method!** Resize all images in a directory at once.
 
 ```bash
-node .claude/skills/image-resizer-skill/resizer.js --dir <directory-path>
+node resizer.js --dir <directory-path>
 ```
 
 **Example:**
 ```bash
 # Resize entire Slack files directory
-node .claude/skills/image-resizer-skill/resizer.js --dir ".crewx/slack-files/C09U0MUREEQ_1764149430.448869"
+node resizer.js --dir "/path/to/images"
 ```
 
 **Result:**
@@ -71,7 +76,7 @@ node .claude/skills/image-resizer-skill/resizer.js --dir ".crewx/slack-files/C09
 When resizing individual files:
 
 ```bash
-node .claude/skills/image-resizer-skill/resizer.js <input-file> [output-file] [options]
+node resizer.js <input-file> [output-file] [options]
 ```
 
 **Options:**
@@ -85,7 +90,7 @@ node .claude/skills/image-resizer-skill/resizer.js <input-file> [output-file] [o
 When processing files matching specific patterns:
 
 ```bash
-node .claude/skills/image-resizer-skill/resizer.js "*.jpg" ./resized/
+node resizer.js "*.jpg" ./resized/
 ```
 
 ## Technical Specifications
@@ -127,17 +132,17 @@ sudo yum install imagemagick
 
 ```bash
 # Directory batch processing (using defaults)
-node .claude/skills/image-resizer-skill/resizer.js --dir ".crewx/slack-files/C09U0MUREEQ_1234567890"
+node resizer.js --dir "/path/to/images"
 ```
 
 ### For Claude API (Larger files allowed)
 ```bash
-node .claude/skills/image-resizer-skill/resizer.js --dir "<directory>" --max-size 3
+node resizer.js --dir "<directory>" --max-size 3
 ```
 
 ### For Document Scans (OCR optimized)
 ```bash
-node .claude/skills/image-resizer-skill/resizer.js --dir "<directory>" --max-width 1920 --quality 90
+node resizer.js --dir "<directory>" --max-width 1920 --quality 90
 ```
 
 ## Agent Usage Guide
@@ -149,8 +154,8 @@ When AI agents use this skill, follow these steps:
 **Always resize the entire directory before image analysis:**
 
 ```bash
-# Batch resize entire directory
-node .claude/skills/image-resizer-skill/resizer.js --dir ".crewx/slack-files/C09U0MUREEQ_1764149430.448869"
+# Batch resize entire directory (run from the skill directory)
+node resizer.js --dir "/path/to/images"
 
 # Work with resized files
 # Use only files from the resized/ folder!
@@ -201,11 +206,11 @@ convert --version
 ### Tax Calculation Scenario
 
 ```bash
-# 1. Batch resize entire directory (once!)
-node .claude/skills/image-resizer-skill/resizer.js --dir ".crewx/slack-files/C09U0MUREEQ_1764149430.448869"
+# 1. Batch resize entire directory (once!) - run from the skill directory
+node resizer.js --dir "/path/to/images"
 
 # 2. Analyze resized files
-# Use files from .crewx/slack-files/C09U0MUREEQ_1764149430.448869/resized/ folder
+# Use files from /path/to/images/resized/ folder
 ```
 
 **Important:** Do not resize files one by one. Always use `--dir` option for batch processing.

@@ -30,24 +30,31 @@ This skill requires:
 1. **Google Cloud Project** with Google Drive API enabled
 2. **OAuth credentials** (Web application type)
 3. **Refresh token** obtained via setup-auth.js
-4. **Environment variables** in `skills/google-drive/.env`
+4. **Environment variables** in `.env` (in the skill directory)
 
 ### Initial Setup
 
 ```bash
-# 1. Install dependencies (skill directory is self-contained)
-cd skills/google-drive
+# 1. Install the skill template
+crewx template init google-drive-skill
+
+# 2. Navigate to the skill directory
+cd google-drive-skill
+
+# 3. Install dependencies
 npm install
 
-# 2. Run authentication setup with your credentials.json
+# 4. Run authentication setup with your credentials.json
 node setup-auth.js --credentials /path/to/credentials.json
 
-# 3. Follow the browser authorization flow
+# 5. Follow the browser authorization flow
 # Credentials are automatically saved to .env
 
-# 4. Test the setup
+# 6. Test the setup
 node list-files.js 5
 ```
+
+> **Note**: The skill can be installed anywhere. All commands below assume you are in the skill directory.
 
 ### Google Cloud Console Setup
 
@@ -62,7 +69,7 @@ node list-files.js 5
 
 ## Available Commands
 
-All commands run from within the `skills/google-drive` directory:
+All commands should be run from within the skill directory:
 
 ### 1. List Files
 Shows recent files from Drive:
@@ -148,7 +155,7 @@ Google Docs를 마크다운으로 저장하려면:
 
 ## Environment Configuration
 
-The skill loads credentials from `skills/google-drive/.env`:
+The skill loads credentials from `.env` in the skill directory:
 ```bash
 DRIVE_CLIENT_ID=your_client_id.apps.googleusercontent.com
 DRIVE_CLIENT_SECRET=your_client_secret
@@ -198,7 +205,7 @@ DRIVE_REFRESH_TOKEN=your_refresh_token
 
 ## Usage Examples
 
-All examples assume you are in the `skills/google-drive` directory.
+All examples assume you are in the skill directory (where SKILL.md is located).
 
 ### Example 1: List Files (파일 목록)
 ```bash
@@ -270,7 +277,7 @@ node read-file.js 1wgITIuoHgy3I62doEgu96bMZP0XpRsIVRAKYPhJol2k \
 ## Troubleshooting
 
 ### "Missing Drive credentials"
-1. Run `npm install` in skills/google-drive directory
+1. Run `npm install` in the skill directory
 2. Run `node setup-auth.js --credentials /path/to/credentials.json`
 3. Verify `.env` file has all three variables set
 

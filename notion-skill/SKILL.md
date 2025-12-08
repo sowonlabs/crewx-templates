@@ -29,27 +29,34 @@ Activate when the user asks about:
 
 This skill requires:
 1. **Notion Integration created** at https://www.notion.so/my-integrations
-2. **API token** stored in `skills/notion/.env` file as `NOTION_INTEGRATION_SECRET`
+2. **API token** stored in `.env` file as `NOTION_INTEGRATION_SECRET`
 3. **Notion pages shared** with the integration
 
 ### Initial Setup
 
 ```bash
-# 1. Install dependencies (skill directory is self-contained)
-cd skills/notion
+# 1. Install the skill template
+crewx template init notion-skill
+
+# 2. Navigate to the skill directory
+cd notion-skill
+
+# 3. Install dependencies
 npm install
 
-# 2. Copy .env.example to .env and add your token
+# 4. Copy .env.example to .env and add your token
 cp .env.example .env
 # Edit .env and add your NOTION_INTEGRATION_SECRET
 
-# 3. Test the setup
+# 5. Test the setup
 node get-notion-pages.js
 ```
 
+> **Note**: The skill can be installed anywhere. All commands below assume you are in the skill directory.
+
 ## Available Commands
 
-All commands run from within the `skills/notion` directory:
+All commands should be run from within the skill directory:
 
 ### 1. List All Pages
 Shows all pages in the Notion workspace:
@@ -110,7 +117,7 @@ node inspect-database.js [database-id]
 
 ## Environment Configuration
 
-The skill loads credentials from `skills/notion/.env`:
+The skill loads credentials from `.env` in the skill directory:
 ```bash
 NOTION_INTEGRATION_SECRET=ntn_your_secret_here
 ```
@@ -148,7 +155,7 @@ NOTION_INTEGRATION_SECRET=ntn_your_secret_here
 
 ## Usage Examples
 
-All examples assume you are in the `skills/notion` directory.
+All examples assume you are in the skill directory (where SKILL.md is located).
 
 ### List All Pages
 ```bash
@@ -234,7 +241,6 @@ Creates new pages in workspace:
 ### "Module not found"
 Install required packages:
 ```bash
-cd skills/notion
 npm install
 ```
 
@@ -288,4 +294,4 @@ Result: 새 페이지 생성 완료, URL 반환
 
 ---
 
-**Remember**: Run commands from the `skills/notion` directory. The skill loads credentials from the local `.env` file.
+**Remember**: Always run commands from the skill directory. The skill loads credentials from the local `.env` file.

@@ -25,24 +25,31 @@ This skill requires:
 1. **Google Cloud Project** with Gmail API enabled
 2. **OAuth credentials** (Web application type)
 3. **Refresh token** obtained via setup-auth.js
-4. **Environment variables** in `skills/gmail/.env`
+4. **Environment variables** in `.env` (in the skill directory)
 
 ### Initial Setup
 
 ```bash
-# 1. Install dependencies (skill directory is self-contained)
-cd skills/gmail
+# 1. Install the skill template
+crewx template init gmail-skill
+
+# 2. Navigate to the skill directory
+cd gmail-skill
+
+# 3. Install dependencies
 npm install
 
-# 2. Run authentication setup with your credentials.json
+# 4. Run authentication setup with your credentials.json
 node setup-auth.js --credentials /path/to/credentials.json
 
-# 3. Follow the browser authorization flow
+# 5. Follow the browser authorization flow
 # Credentials are automatically saved to .env
 
-# 4. Test the setup
+# 6. Test the setup
 node list-messages.js 5
 ```
+
+> **Note**: The skill can be installed anywhere. All commands below assume you are in the skill directory.
 
 ### Google Cloud Console Setup
 
@@ -57,7 +64,7 @@ node list-messages.js 5
 
 ## Available Commands
 
-All commands run from within the `skills/gmail` directory:
+All commands should be run from within the skill directory:
 
 ### 1. List Messages
 Shows recent emails from inbox:
@@ -112,7 +119,7 @@ node search-messages.js "has:attachment after:2025/01/01" 20
 
 ## Environment Configuration
 
-The skill loads credentials from `skills/gmail/.env`:
+The skill loads credentials from `.env` in the skill directory:
 ```bash
 GMAIL_CLIENT_ID=your_client_id.apps.googleusercontent.com
 GMAIL_CLIENT_SECRET=your_client_secret
@@ -162,7 +169,7 @@ Common search operators:
 
 ## Usage Examples
 
-All examples assume you are in the `skills/gmail` directory.
+All examples assume you are in the skill directory (where SKILL.md is located).
 
 ### Example 1: Check Inbox (이메일 확인)
 ```bash
@@ -225,7 +232,7 @@ node search-messages.js "is:unread" 20
 ## Troubleshooting
 
 ### "Missing Gmail credentials"
-1. Run `npm install` in skills/gmail directory
+1. Run `npm install` in the skill directory
 2. Run `node setup-auth.js --credentials /path/to/credentials.json`
 3. Verify `.env` file has all three variables set
 
@@ -258,4 +265,4 @@ When helping users with Gmail tasks:
 
 ---
 
-**Remember**: Always load credentials from `skills/gmail/.env`, handle errors gracefully, and provide user-friendly output.
+**Remember**: Always run commands from the skill directory. Credentials are loaded from the local `.env` file. Handle errors gracefully and provide user-friendly output.
