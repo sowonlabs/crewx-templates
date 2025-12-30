@@ -186,6 +186,23 @@
         "Auto-detect channel from environment",
         "Message attachment support"
       ]
+    },
+    {
+      "name": "jarvis",
+      "displayName": "Jarvis AI Assistant",
+      "description": "Iron Man-style personal AI assistant template with multi-agent orchestration",
+      "version": "1.0.0",
+      "path": "jarvis",
+      "author": "SowonLabs",
+      "tags": ["assistant", "multi-agent", "orchestration", "personal-ai", "jarvis"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Multi-agent orchestration (Claude, Codex, Gemini)",
+        "Iron Man-style personality (JARVIS + F.R.I.D.A.Y.)",
+        "Task breakdown and parallel execution",
+        "Development workflow assistance",
+        "Context-aware conversation"
+      ]
     }
   ]
 }
