@@ -1,0 +1,25 @@
+# Nemotron Persona Skill - Agent Configuration
+# ==============================================
+# Persona simulation powered by NVIDIA Nemotron-Personas-Korea dataset
+#
+# Supported providers: acp/claude, acp/codex
+# Override via: --provider=acp/codex  or  NEMOTRON_PROVIDER=acp/codex
+#
+# Usage:
+#   node skills/nemotron-persona/nemotron-persona.js download
+#   node skills/nemotron-persona/nemotron-persona.js search --age=20-30 --province=서울특별시
+#   node skills/nemotron-persona/nemotron-persona.js pick --random
+#   node skills/nemotron-persona/nemotron-persona.js query <uuid> "question"
+#   node skills/nemotron-persona/nemotron-persona.js query --random "question" --provider=acp/codex
+
+agents:
+  - id: nemotron_persona_actor
+    name: "Persona Actor"
+    provider: acp/claude
+    role: "Persona Simulator"
+    inline:
+      model: "{{model}}"
+      layout:
+        id: "crewx/minimal"
+      prompt: |
+        {{env.NEMOTRON_PERSONA_PROMPT}}

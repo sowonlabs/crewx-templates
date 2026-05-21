@@ -186,6 +186,41 @@
         "Auto-detect channel from environment",
         "Message attachment support"
       ]
+    },
+    {
+      "name": "receipt-organizer",
+      "displayName": "Receipt Organizer",
+      "description": "영수증 사진을 멀티에이전트로 처리해 Excel/구글시트에 자동으로 행 추가하는 템플릿 (로컬 실행, 원본 데이터 외부 X)",
+      "version": "0.1.0",
+      "path": "receipt-organizer",
+      "author": "SowonLabs",
+      "tags": ["receipts", "ocr", "accounting", "excel", "tax", "korean"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "폴더에 사진만 떨구면 자동 처리",
+        "OCR + 합계 검증 + 카테고리 분류 + 부가세 매입공제 태깅",
+        "사용자 본인 LLM 키 사용(BYOA) — 원본 영수증 PC 밖 X",
+        "CSV 출력 → Excel Power Query / 구글시트 IMPORTDATA 연결",
+        "30일 중복 영수증 자동 감지"
+      ]
+    },
+    {
+      "name": "nemotron-persona-skill",
+      "displayName": "Nemotron Persona Skill",
+      "type": "skill",
+      "description": "Persona simulation powered by NVIDIA Nemotron-Personas-Korea dataset (1M Korean personas)",
+      "version": "0.2.0",
+      "path": "nemotron-persona-skill",
+      "author": "SowonLabs",
+      "tags": ["skill", "persona", "simulation", "nvidia", "nemotron", "korean", "duckdb"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "1M Korean personas from NVIDIA Nemotron dataset",
+        "Demographic search (age, gender, location, occupation)",
+        "AI-powered persona conversation simulation",
+        "Multi-provider support (acp/claude, acp/codex)",
+        "DuckDB-based fast parquet query engine"
+      ]
     }
   ]
 }

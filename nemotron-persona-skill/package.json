@@ -1,0 +1,16 @@
+{
+  "name": "crewx-skill-nemotron-persona",
+  "version": "0.2.0",
+  "description": "Persona simulation powered by NVIDIA Nemotron-Personas-Korea dataset (1M Korean personas)",
+  "main": "nemotron-persona.js",
+  "scripts": {
+    "download": "node nemotron-persona.js download",
+    "status": "node nemotron-persona.js status",
+    "search": "node nemotron-persona.js search",
+    "pick": "node nemotron-persona.js pick",
+    "query": "node nemotron-persona.js query"
+  },
+  "dependencies": {
+    "duckdb": "^1.1.3"
+  }
+}
