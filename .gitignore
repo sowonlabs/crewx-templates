@@ -69,3 +69,12 @@ downloads/
 
 # Generated PDFs (from md-to-pdf)
 output/
+
+# =================================
+# CrewX runtime data (never commit)
+# =================================
+
+.data/
+sessions/
+memory/
+.crewx/

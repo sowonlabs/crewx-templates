@@ -1,0 +1,12 @@
+{
+  "name": "crewx-skill-dailyplanner",
+  "version": "0.1.0",
+  "description": "Daily planner markdown authoring guide — exact format spec compatible with the CrewX UI parser",
+  "type": "module",
+  "scripts": {
+    "help": "npx crewx@next skill crewx-dailyplanner"
+  },
+  "keywords": ["crewx", "skill", "planner", "daily", "markdown"],
+  "author": "SowonLabs",
+  "license": "MIT"
+}

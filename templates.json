@@ -221,6 +221,24 @@
         "Multi-provider support (acp/claude, acp/codex)",
         "DuckDB-based fast parquet query engine"
       ]
+    },
+    {
+      "name": "crewx-dailyplanner",
+      "displayName": "Daily Planner Skill",
+      "type": "skill",
+      "description": "Daily planner markdown authoring guide — exact format spec compatible with the CrewX UI parser",
+      "version": "0.1.0",
+      "path": "crewx-dailyplanner",
+      "author": "SowonLabs",
+      "tags": ["skill", "planner", "daily", "markdown", "doc"],
+      "crewxVersion": ">=0.8.0",
+      "features": [
+        "Exact markdown format spec for CrewX UI parser",
+        "Top 3 / Brain Dump / Schedule / Notes / Reflection sections",
+        "Schedule checkbox states (pending / done / cancelled)",
+        "Agent assignment syntax (@agentname)",
+        "Writing guide for agent-authored daily entries"
+      ]
     }
   ]
 }
