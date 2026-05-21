@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "registries": [
+    {
+      "id": "crewx-official",
+      "url": "https://github.com/sowonlabs/crewx-templates",
+      "trust": "verified",
+      "type": "crewx"
+    }
+  ],
+  "deny": [],
+  "forceDisabled": [],
+  "forceEnabled": []
+}
