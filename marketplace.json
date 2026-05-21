@@ -3,9 +3,11 @@
   "registries": [
     {
       "id": "crewx-official",
+      "name": "crewx-templates",
       "url": "https://github.com/sowonlabs/crewx-templates",
       "trust": "verified",
-      "type": "crewx"
+      "type": "crewx",
+      "default": true
     }
   ],
   "deny": [],
