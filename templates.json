@@ -205,12 +205,12 @@
       ]
     },
     {
-      "name": "nemotron-persona-skill",
+      "name": "nemotron-persona",
       "displayName": "Nemotron Persona Skill",
       "type": "skill",
       "description": "Persona simulation powered by NVIDIA Nemotron-Personas-Korea dataset (1M Korean personas)",
       "version": "0.2.0",
-      "path": "nemotron-persona-skill",
+      "path": "nemotron-persona",
       "author": "SowonLabs",
       "tags": ["skill", "persona", "simulation", "nvidia", "nemotron", "korean", "duckdb"],
       "crewxVersion": ">=0.7.0",
