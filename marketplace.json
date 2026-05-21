@@ -8,6 +8,13 @@
       "trust": "verified",
       "type": "crewx",
       "default": true
+    },
+    {
+      "id": "anthropic-skills",
+      "name": "Anthropic Skills",
+      "url": "https://github.com/anthropics/skills",
+      "trust": "verified",
+      "type": "claude"
     }
   ],
   "deny": [],
