@@ -15,6 +15,13 @@
       "url": "https://github.com/anthropics/skills",
       "trust": "verified",
       "type": "claude"
+    },
+    {
+      "id": "cloudflare-skills",
+      "name": "Cloudflare Skills",
+      "url": "https://github.com/cloudflare/skills",
+      "trust": "verified",
+      "type": "claude"
     }
   ],
   "deny": [],
