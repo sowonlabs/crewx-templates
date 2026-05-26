@@ -239,6 +239,24 @@
         "Agent assignment syntax (@agentname)",
         "Writing guide for agent-authored daily entries"
       ]
+    },
+    {
+      "name": "agent-browser",
+      "displayName": "Agent Browser Skill",
+      "type": "skill",
+      "description": "CrewX skill for agent-browser - Chrome recipe factory",
+      "version": "0.1.0",
+      "path": "agent-browser",
+      "author": "SowonLabs",
+      "tags": ["skill", "browser", "automation", "chrome", "playwright", "debugging", "recipe"],
+      "crewxVersion": ">=0.7.0",
+      "features": [
+        "Chrome browser automation via accessibility tree (Playwright-core)",
+        "Record browser sessions and convert to reusable chrome-mcp recipes",
+        "Natural language task execution with step-by-step automation",
+        "Frontend debugging with console/error capture, JS eval, and Playwright trace",
+        "chrome-mcp recipe integration for cross-skill reuse"
+      ]
     }
   ]
 }

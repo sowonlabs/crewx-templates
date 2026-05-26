@@ -1,0 +1,15 @@
+{
+  "name": "agent-browser",
+  "version": "0.1.0",
+  "description": "CrewX skill for agent-browser - Chrome recipe factory",
+  "scripts": {
+    "install-chromium": "node agent-browser.js install",
+    "run": "node agent-browser.js run",
+    "record": "node agent-browser.js record",
+    "convert": "node agent-browser.js convert",
+    "test-google": "node agent-browser.js test-google"
+  },
+  "dependencies": {
+    "agent-browser": "^0.15.1"
+  }
+}

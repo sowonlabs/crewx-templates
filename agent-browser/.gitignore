@@ -1,0 +1,10 @@
+node_modules/
+.data/
+.crewx/
+memory/
+sessions/*.jsonl
+sessions/.current.json
+sessions/.log.jsonl
+sessions/.snapshot-refs.json
+tools/*.json
+!tools/.gitkeep
